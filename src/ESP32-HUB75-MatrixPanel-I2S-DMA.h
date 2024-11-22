@@ -175,8 +175,8 @@ struct rowBitStruct
     // data = (ESP32_I2S_DMA_STORAGE_TYPE *)heap_caps_malloc( size()+size()*double_buff, MALLOC_CAP_INTERNAL | MALLOC_CAP_DMA);
 
     // No longer have double buffer in the same struct - have a different struct
-    data = (ESP32_I2S_DMA_STORAGE_TYPE *)heap_caps_malloc(getColorDepthSize(), MALLOC_CAP_INTERNAL | MALLOC_CAP_DMA);
-
+    data = (ESP32_I2S_DMA_STORAGE_TYPE *)heap_caps_malloc(getColorDepthSize(), MALLOC_CAP_SPIRAM);
+    
 #endif
   }
   ~rowBitStruct() { delete data; }
