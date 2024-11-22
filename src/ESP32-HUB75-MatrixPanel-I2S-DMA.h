@@ -170,8 +170,7 @@ struct rowBitStruct
 
     // data = (ESP32_I2S_DMA_STORAGE_TYPE *)heap_caps_aligned_alloc(64, size()+size()*double_buff, MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
     // No longer have double buffer in the same struct - have a different struct
-    // data = (ESP32_I2S_DMA_STORAGE_TYPE *)heap_caps_aligned_alloc(64, getColorDepthSize(), MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
-    data = (ESP32_I2S_DMA_STORAGE_TYPE *)heap_caps_malloc(getColorDepthSize(), MALLOC_CAP_SPIRAM | MALLOC_CAP_DMA);
+    data = (ESP32_I2S_DMA_STORAGE_TYPE *)heap_caps_aligned_alloc(64, getColorDepthSize(), MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
 #else
     // data = (ESP32_I2S_DMA_STORAGE_TYPE *)heap_caps_malloc( size()+size()*double_buff, MALLOC_CAP_INTERNAL | MALLOC_CAP_DMA);
 
